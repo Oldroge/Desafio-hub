@@ -22,7 +22,7 @@ public class PessoaController {
     this.gson = new Gson();
   }
 
-  @GetMapping("/")
+  @GetMapping
   public String findAll() {
     ArrayList<Pessoa> todasPessoas = this.pessoaService.findAll();
     return this.gson.toJson(todasPessoas);
