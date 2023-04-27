@@ -68,4 +68,26 @@ public class PessoaService {
     return null;
   }
 
+  public String deletePessoa(Integer id) {
+    Connection connect = connection.getConnection();
+    try {
+      PreparedStatement statement =
+          connect.prepareStatement("delete from pure.Pessoas where id = ?");
+      statement.setInt(1, id);
+      int deleted = statement.executeUpdate();
+      if (deleted > 0) {
+        return "Pessoa removida";
+      } else {
+        return "Pessoa não encontrada";
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      connection.closeConnection();
+    }
+
+    return null;
+  }
 }
+
+
