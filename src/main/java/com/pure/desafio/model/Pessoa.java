@@ -1,7 +1,7 @@
 package com.pure.desafio.model;
 
 public class Pessoa {
-  private Long id;
+  private Integer id;
   private String nome;
   private String email;
   private String telefone;
@@ -16,13 +16,13 @@ public class Pessoa {
   }
 
 
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
 
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setId(Integer i) {
+    this.id = i;
   }
 
 
