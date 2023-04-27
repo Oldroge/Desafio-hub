@@ -1,5 +1,7 @@
 package com.pure.desafio.service;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -38,4 +40,54 @@ public class PessoaService {
     return null;
   }
 
+  public Pessoa addNewPessoa(Pessoa novaPessoa) {
+    try {
+      Connection connect = connection.getConnection();
+      PreparedStatement statement = connect.prepareStatement(
+          "insert into pure.Pessoas(nome, email, telefone, profissao) " + "values(?, ?, ?, ?)",
+          Statement.RETURN_GENERATED_KEYS);
+
+      statement.setString(1, novaPessoa.getNome());
+      statement.setString(2, novaPessoa.getEmail());
+      statement.setString(3, novaPessoa.getTelefone());
+      statement.setString(4, novaPessoa.getProfissao());
+
+      int inserted = statement.executeUpdate();
+      if (inserted > 0) {
+        ResultSet result = statement.getGeneratedKeys();
+        if (result.next()) {
+          novaPessoa.setId(result.getInt(1));
+        }
+      }
+      return novaPessoa;
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      connection.closeConnection();
+    }
+    return null;
+  }
+
+  public String deletePessoa(Integer id) {
+    Connection connect = connection.getConnection();
+    try {
+      PreparedStatement statement =
+          connect.prepareStatement("delete from pure.Pessoas where id = ?");
+      statement.setInt(1, id);
+      int deleted = statement.executeUpdate();
+      if (deleted > 0) {
+        return "Pessoa removida";
+      } else {
+        return "Pessoa não encontrada";
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      connection.closeConnection();
+    }
+
+    return null;
+  }
 }
+
+
