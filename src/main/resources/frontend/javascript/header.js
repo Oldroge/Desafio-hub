@@ -1,10 +1,11 @@
-let fieldNames = ["Nome", "Email", "Telefone", "Profissão"];
+let fieldNames = ["nome", "email", "telefone", "profissao"];
 
-function createInputTag(fieldName) {
+function createInputTag(fieldName, index) {
 	let header = document.getElementById('parent');
 	let input = document.createElement('input');
 	input.setAttribute('placeholder', fieldName);
-	input.setAttribute('class', 'input-data');
+	input.setAttribute('id', `input-data-${index}`);
+	input.setAttribute('name', fieldName);
 	header.appendChild(input);
 }
 
@@ -21,11 +22,12 @@ function sendDataButton() {
 
 function fillPlaceholders() {
 	for (let index = 0; index < fieldNames.length; index += 1) {
-		createInputTag(fieldNames[index]);
+		createInputTag(fieldNames[index], index);
 	}
 	sendDataButton();
 }
 
 
 fillPlaceholders();
+
 
