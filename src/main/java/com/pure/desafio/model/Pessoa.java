@@ -8,7 +8,8 @@ public class Pessoa {
   private String profissao;
 
 
-  public Pessoa(String nome, String email, String telefone, String profissao) {
+  public Pessoa(Integer id, String nome, String email, String telefone, String profissao) {
+    this.id = id;
     this.nome = nome;
     this.email = email;
     this.telefone = telefone;

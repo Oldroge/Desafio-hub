@@ -31,10 +31,3 @@ submitDatas.addEventListener('click', () => {
     .then(response => console.log(response))
     .catch(error => error)
 });
-
-
-
-
-/**
- * 
-*/
