@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 import com.pure.desafio.connection.JDBCConnection;
 import com.pure.desafio.model.Pessoa;
 
+/**
+ * para realizar as querys utilizei esse link com referência:
+ * https://jenkov.com/tutorials/jdbc/statement.html
+ */
 @Service
 public class PessoaService {
   ArrayList<Pessoa> todasPessoas = new ArrayList<>();
