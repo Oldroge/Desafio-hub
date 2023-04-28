@@ -30,11 +30,12 @@ public class PessoaService {
       ArrayList<Pessoa> todasPessoas = new ArrayList<>();
 
       while (result.next()) {
+        Integer id = result.getInt("id");
         String name = result.getString("nome");
         String email = result.getString("email");
         String phoneNumber = result.getString("telefone");
         String profession = result.getString("profissao");
-        Pessoa pessoa = new Pessoa(name, email, phoneNumber, profession);
+        Pessoa pessoa = new Pessoa(id, name, email, phoneNumber, profession);
         todasPessoas.add(pessoa);
       }
       return todasPessoas;
