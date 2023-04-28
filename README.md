@@ -34,7 +34,7 @@ Para executar o projeto no lado do servidor precisa ter instalado em sua máquin
 
 - Acesse a API através do: `http://localhost:8080/pessoas`
 
-###### A api por enquanto aceita um GET, POST e DELETE, não sem possível fazer um PUT.
+###### A api por enquanto aceita um GET, POST e DELETE, não sendo possível fazer um PUT.
 
 ##### Cliente-side:
 Usei a IDE Eclipse para desenvolver todo o projeto, no marketplace do eclipse é possível baixar o Eclipse Web Developer Tools, para auxiliar no desenvolvimento de HTML, CSS e Javascript.<br>
