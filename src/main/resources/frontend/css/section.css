@@ -1,0 +1,26 @@
+#thead {
+	background-color: #7100e2;
+	
+	
+}
+
+th {
+	color: white;
+	font-size: 12px;
+	font-weight: 550;
+	padding: 7px;
+	width: 220px;
+	text-align: center;
+}
+
+td {
+	text-align: center;
+}
+
+table {
+	margin-top: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
